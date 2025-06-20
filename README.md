@@ -1,1 +1,195 @@
-# Happy-Birthday-Harviii
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Harvii 🎉</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 25px #ff00cc, 0 0 40px #ff66cc; }
+    }
+
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink-caret 0.8s step-end infinite;
+      font-size: 1.4em;
+      margin: 20px 0;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: white; }
+    }
+
+    .message, .quote, .footer {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.3em;
+    }
+
+    .final-message {
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #fff;
+      animation: glow 2s infinite alternate;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 15px 25px;
+      background: #fff;
+      color: #bb377d;
+      font-size: 1.1em;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background: #ffe0f0;
+    }
+
+    .gift-message {
+      display: none;
+      margin: 40px auto;
+      padding: 25px;
+      background: rgba(255,255,255,0.15);
+      border: 2px dashed #fff;
+      border-radius: 15px;
+      font-size: 1.2em;
+      color: #fff;
+      max-width: 600px;
+      animation: slideUp 1s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 40px;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 1.1em;
+      opacity: 0.8;
+    }
+
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎉 Happy Birthday, Harvii! 🎂</h1>
+
+<div class="typewriter">
+  You deserve all the love and smiles in the world today 🌸
+</div>
+
+<div class="message">
+  You’re one of the most beautiful souls I’ve met. No matter what others say or do,<br>
+  your light will always shine brighter.  
+  You’ve got a heart that’s rare, and it shows every day.  
+  I hope this year brings you nothing but strength, laughter, and peace.  
+</div>
+
+<!-- 🎁 Surprise Button -->
+<button onclick="showMessage()">Tap for my wishes 🎁</button>
+
+<!-- 💌 Message Reveal -->
+<div class="gift-message" id="giftMessage">
+  🎈 Harvii, you’ve always been someone I admire...<br>
+  Not just for your smile, but for your strength. <br>
+  I’ve seen your heart. I’ve seen your light. <br>
+  And I hope today reminds you how truly amazing you are. 💖<br>
+  You’re really, really special to me.  
+  —Sai 💙
+</div>
+
+<div class="quote">
+  "In a world full of noise, your kindness is the calm."
+</div>
+
+<div class="final-message">
+  Never forget: You're stronger, brighter, and more amazing than you think. 🌟
+</div>
+
+<div class="footer">
+  Made with ❤️ by someone who truly cares.
+</div>
+
+<canvas class="confetti" id="confetti-canvas"></canvas>
+
+<!-- 🎇 Confetti + Message Script -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  const duration = 7000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+
+  function showMessage() {
+    const msg = document.getElementById("giftMessage");
+    msg.style.display = "block";
+  }
+</script>
+
+</body>
+</html>
